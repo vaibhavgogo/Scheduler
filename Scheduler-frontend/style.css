@@ -1,0 +1,113 @@
+*{
+margin: 0;
+padding: 0;
+font-family: 'poppins', sans-serif;
+box-sizing: border-box;
+
+}
+.container{
+width: 100%;
+min-height: 100vh;
+background: linear-gradient(135deg,#153677,#4e085f);
+padding: 10px;
+
+}
+.box{
+width: 100%;
+max-width: 540px;
+background-color: #fff;
+padding: 40px 30px 70px;
+margin: 100px auto 30px;
+border-radius: 10px;
+
+}
+#gen{
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    background: #4e085f;
+    color: white;
+    font-size: 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.row{
+display: flex;
+align-items: center;
+justify-content: space-between;
+background: #edeef0;
+    border-radius: 30px;
+    padding-left: 30px;
+    margin-bottom: 25px;
+}
+.time{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+input{
+    width: 80%;
+    height: 40px;
+    outline: none;
+    border: none;
+    flex: 1px;
+    background: transparent;
+    font-size: 16px;
+}
+button{
+    width: 20%;
+    height: 40px;
+    border: none;
+    outline: none;
+    background: #4e085f;
+    color: white;
+    font-size: 16px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+ul li {
+    list-style: none;
+    font-size: 17px;
+    user-select: none;
+    position: relative;
+    padding: 12px;
+    margin-bottom: 10px;
+    background: #fff;
+    border-radius: 8px;
+}
+
+ul li span{
+    position: absolute;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    align-content: center;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    color: black;
+    font-size: 20px;
+    border-radius: 50%;
+   
+}
+ul li span:hover{
+    background: #edeef0;
+}
+.chat-output {
+  margin-top: 20px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.chat-bubble {
+  background: #f4f1fb;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.chat-bubble strong {
+  color: #4b0082;
+}
