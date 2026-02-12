@@ -21,7 +21,8 @@ const openai = new OpenAI({
   apiKey: process.env.OPENROUTER_API_KEY,
   baseURL: "https://openrouter.ai/api/v1",
   defaultHeaders: {
-    "HTTP-Referer": "http://localhost:5173",
+   "HTTP-Referer": "https://scheduler-one-delta.vercel.app",
+,
     "X-Title": "AI Scheduler App"
   }
 });
@@ -123,7 +124,8 @@ Format:
 `;
 
     const scheduleRes = await openai.chat.completions.create({
-      model: "openai/gpt-4o-mini",
+     model: "openai/gpt-3.5-turbo",
+
       messages: [{ role: "user", content: schedulePrompt }],
       temperature: 0.3
     });
@@ -144,7 +146,8 @@ Format:
 });
 
 // ---------- START SERVER ----------
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+
 app.listen(PORT, () => {
   console.log(`✅ Backend running on http://localhost:${PORT}`);
 });
