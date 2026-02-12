@@ -65,7 +65,7 @@ async function generate() {
   }
 
   try {
-    const response = await fetch("http://localhost:3000/ai-schedule", {
+    const response = await fetch("http://scheduler-production-ece6.up.railway.app", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
