@@ -130,20 +130,20 @@ Format:
       temperature: 0.3
     });
 
-    const schedule = JSON.parse(
-      scheduleRes.choices[0].message.content
-        .replace(/```json/gi, "")
-        .replace(/```/g, "")
-        .trim()
-    );
+    app.get("/test", async (req, res) => {
+  try {
+    const response = await openai.chat.completions.create({
+      model: "openai/gpt-3.5-turbo",
+      messages: [{ role: "user", content: "Say hello" }]
+    });
 
-    res.json(schedule);
-
+    res.json(response);
   } catch (err) {
-    console.error("AI ERROR:", err.message);
-    res.status(500).json({ error: "AI scheduling failed" });
+    console.error("TEST ERROR:", err);
+    res.status(500).json({ error: err.message });
   }
 });
+
 
 // ---------- START SERVER ----------
 const PORT = process.env.PORT || 3000;
