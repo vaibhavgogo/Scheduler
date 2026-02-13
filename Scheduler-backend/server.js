@@ -13,7 +13,14 @@ console.log(
 
 // ---------- CREATE APP (IMPORTANT) ----------
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "https://scheduler-one-delta.vercel.app",
+  methods: ["GET", "POST", "OPTIONS"],
+  allowedHeaders: ["Content-Type"],
+}));
+
+app.options("*", cors()); 
+
 app.use(express.json());
 
 // ---------- OPENROUTER CLIENT ----------
