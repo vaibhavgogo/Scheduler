@@ -21,11 +21,11 @@ const openai = new OpenAI({
   apiKey: process.env.OPENROUTER_API_KEY,
   baseURL: "https://openrouter.ai/api/v1",
   defaultHeaders: {
-   "HTTP-Referer": "https://scheduler-one-delta.vercel.app",
-
+    "HTTP-Referer": "https://scheduler-one-delta.vercel.app",
     "X-Title": "AI Scheduler App"
   }
 });
+
 
 // ---------- HEALTH CHECK ----------
 app.get("/", (req, res) => {
