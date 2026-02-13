@@ -13,15 +13,21 @@ console.log(
 
 // ---------- CREATE APP (IMPORTANT) ----------
 const app = express();
-app.use(cors({
-  origin: "https://scheduler-one-delta.vercel.app",
-  methods: ["GET", "POST", "OPTIONS"],
-  allowedHeaders: ["Content-Type"],
-}));
-
-app.options("*", cors()); 
 
 app.use(express.json());
+
+// ✅ Proper CORS config
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "https://scheduler-one-delta.vercel.app");
+  res.header("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Content-Type");
+
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(200);
+  }
+
+  next();
+});
 
 // ---------- OPENROUTER CLIENT ----------
 const openai = new OpenAI({
